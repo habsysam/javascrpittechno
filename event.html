@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 id="username">habsy</h1>
+    <button onclick="testClick()">Click</button>
+    <button onclick="changeName('lincy')">Change Name</button>
+    <script src="event.js"></script>
+   
+    <!---<h2 id="changeColor" onmouseout="removeBGColor()" onmouseover="applyBGColor()">this is h2 tag</h2>-->
+  <h2 id="changeColor"
+    onmouseout="removeApplyBColor('white')"
+    onmouseover="removeApplyBColor('red')"> 
+    this is h2 tag</h2>
+    <hr>
+    <input id ="randomData" type ="text"onkeyup="getData()"
+    onkeydown="showData()">
+    <p id="show"></p>
+    <input type="checkbox"id ="hobbies" onclick="checkBoxClick()">
+</body>
+</html>

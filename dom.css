@@ -1,0 +1,16 @@
+.labelTag {
+    color: brown;
+    font-weight: bold;
+    }
+    
+    .labelBg {
+        background-color: cyan;
+        border: 1px solid blueviolet;
+    }
+    #nameslist {
+        /* space required by the elemnts will
+        be preserverd*/
+        /* visibility: hidden; */
+        /* space required by the elemnts will be preserved */
+         display: none; 
+    }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="vildfrm.css">
+    
+    
+</head>
+ 
+<body> 
+    
+  <div class="container">
+    <div class="header">
+        <h2>Create Account</h2>
+    </div>
+    <form id="form" class="form">
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter your name" id="username" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="username">Email</label>
+            <input type="email" placeholder="xyz@gmail.com" id="email" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="phone">Mobile number</label>
+            <input type="number" placeholder="Mobile Number" id="number"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="username">Password</label>
+            <input type="text" placeholder="Password" id="password"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="username">Password check</label>
+            <input type="password" placeholder="Confirm pass" id="password2"/>
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        
+            
+        <button color="white"><a href="music.html">Submit</a></button>
+    </form>
+</div>
+</div>
+<script>
+
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const mobile = document.getElementById('number');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+
+form.addEventListener('submit', e => {
+e.preventDefault();    
+checkInputs();
+});
+
+function checkInputs() {
+// trim to remove the emptyspaces
+const usernameValue = username.value.trim();
+const emailValue = email.value.trim();
+const phoneValue = mobile.value.trim();
+const passwordValue = password.value.trim();
+const password2Value = password2.value.trim();
+
+if(usernameValue === '') {
+ setErrorFor(username, 'Username cannot be empty');
+} else {
+setSuccessFor(username);
+}
+
+if(emailValue === '') {
+setErrorFor(email, 'Email cannot be empty');
+} else if (!isEmail(emailValue)) {
+setErrorFor(email, 'Not a valid email');
+} else {
+setSuccessFor(email);
+}
+
+if(phoneValue === '') {
+setErrorFor(mobile, 'Mobile cannot be empty');
+} else if (!isPhone(phoneValue)) {
+setErrorFor(mobile, 'Length should be 10 &  start from the number 6/7/8/9');
+} else {
+setSuccessFor(mobile);
+}
+
+if(passwordValue === '') {
+setErrorFor(password, 'Password cannot be empty');
+}
+else if(!isPassword(passwordValue)){
+    setErrorFor(password, 'length should be 6 to 20 which contain at least one numeric digit, one uppercase and one lowercase letter');
+}
+ else {
+setSuccessFor(password);
+}
+
+if(password2Value === '') {
+setErrorFor(password2, 'Password2 cannot be empty');
+} else if(passwordValue !== password2Value) {
+setErrorFor(password2, 'Password does not match');
+} else{
+setSuccessFor(password2);
+}
+}
+
+function setErrorFor(input, message) {
+const formControl = input.parentElement;
+const small = formControl.querySelector('small');
+formControl.className = 'form-control error';
+small.innerText = message;
+}
+
+function setSuccessFor(input) {
+const formControl = input.parentElement;
+formControl.className = 'form-control success';
+}
+
+function isEmail(emailValue) {
+return /^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emailValue);
+}
+
+function isPhone(phoneValue){
+return /^[6789]\d{9}$/.test(phoneValue);
+}
+
+function isPassword(passwordValue){
+return test(passwordValue);
+}
+function isPassword(passwordValue){
+return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(passwordValue);
+}
+
+</script>  
+
+</body>
+</html>

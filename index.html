@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/day3.js"></script>
+    <script>
+//javascript code 
+var message='hello'
+var myname="habsy"
+var greet = `My Name ${myname}`
+        console.log(message);
+        console.log(message);
+        console.log(message);
+        console.log(message);
+        console.log(message);
+        console.log(message);
+        console.log('My Name 2+3 :' +myname);
+        console.log('greet', greet);
+// number
+var age = 12
+console.log(age);
+//boolean
+var hadboyfrd=false;
+console.log(hadboyfrd);
+
+//undefined
+var willMarry
+console.log(willMarry);
+
+//null
+var havekids=null
+console.log(havekids);
+
+//assignment
+var num=5;
+num1=num+10;
+
+num+=10//num=num+10
+console.log(num);
+console.log('===========');
+var val=10
+var str='10'
+if(val==str){
+    console.log("Both are equal");
+}else{
+    console.log("not equal");
+}
+
+//case 1:per >=70 FCD
+//CASE 2: PER >=60 && per<70 first class
+//case 3: per >= 35 && per <60 pas 
+// case 4: per <35 &&
+
+
+/*var per=89
+switch(per){
+    case 90: console.log('fcd') 
+    break
+    case 89:console.log('fcd') 
+}*/
+
+var per =100
+//typeof(per) //number ,string ,boolean, undefined,object
+if(per<0|| per>100||typeof(per)!=='number'||
+isNaN(per)===true){
+    console.log("Invalid");
+
+}else if(per>=70 && per<=100){
+    console.log('FCD');
+}
+    else if(per>=60 && per<70){
+        console.log('first class');
+
+    }else if(per>=35&& per<60){
+        console.log("pass");
+
+    }
+    else{
+        console.log("fail");
+    }
+
+
+ var result=(per <0 ||per>100||typeof(per)!=='number'|| isNaN(per)=== true)? console.log(Invalid):
+    (per>=70&&per <=100)?'FCD': (per >=60 && per<70)?'First Class':console.log(per >=35 && per<60)?'pass':'fail'
+    console.log('Result',result);
+
+
+    </script>
+</head>
+<body>
+    <button>Click</button>
+
+    <h1>HI</h1>
+<p>welcome</p>
+<h2>hi</h2>
+
+    
+</body>
+</html>
